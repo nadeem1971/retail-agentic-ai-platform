@@ -1,2 +1,10 @@
-# retail-agentic-ai-platform
-7-agent LangGraph Agentic Control Plane     on GCP — Vertex AI Search, Gemini 2.5 Flash,    RAG, HITL email workflow, Cloud DLP, GDPR.    Production deployed on Cloud Run asia-south1.
+# BITS-AIML-Mtech-V2
+Study material for BITS WILP AIML 23-24 
+--------------------------------------
+Note to self :
+Creating this new repo as earlier one doesnt have push access
+
+Clone this in a folder outside usual bits folder, make a new branch for any asmt
+Push once completed, create a PR and merge with master
+
+Keep master updated after each deadline.

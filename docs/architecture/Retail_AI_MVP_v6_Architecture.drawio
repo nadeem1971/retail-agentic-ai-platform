@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-02T17:00:00.000Z" agent="Claude" version="21.0.0">
+  <diagram name="Retail AI Platform MVP v5 Final" id="retail-ai-mvp-v5">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TITLE -->
+        <mxCell id="title" value="Retail AI Platform — MVP v6 FINAL (LangGraph Agentic Control Plane + RAG + HITL + Policy/Watcher)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#C9993F;" vertex="1" parent="1">
+          <mxGeometry x="80" y="20" width="1100" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 1: CLIENT APP -->
+        <mxCell id="client" value="&lt;b&gt;Client APP&lt;/b&gt;&lt;br/&gt;Web · Mobile · Chat · In-store" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1A2535;strokeColor=#374151;fontColor=#E5E7EB;fontSize=13;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="80" y="76" width="1100" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6B7280;" edge="1" source="client" target="clb" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- LAYER 2: CLOUD LB -->
+        <mxCell id="clb" value="&lt;b&gt;Cloud Load Balancing + Cloud Armor&lt;/b&gt;&lt;br/&gt;Traffic distribution · WAF · DDoS protection · SSL termination" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0C447C;strokeColor=#185FA5;fontColor=#B5D4F4;fontSize=13;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="80" y="168" width="1100" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6B7280;" edge="1" source="clb" target="apigw" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- LAYER 3: API GATEWAY -->
+        <mxCell id="apigw" value="&lt;b&gt;API Gateway&lt;/b&gt;&lt;br/&gt;JWT auth · Rate limiting · Request routing · API key validation · CORS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0C447C;strokeColor=#185FA5;fontColor=#B5D4F4;fontSize=13;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="80" y="260" width="1100" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6B7280;" edge="1" source="apigw" target="microsvc" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- LAYER 4: MICROSERVICES CONTAINER -->
+        <mxCell id="microsvc" value="&lt;b&gt;Microservices — Cloud Run v6 (FINAL)&lt;/b&gt;" style="points=[[0,0],[0.5,0],[1,0],[1,0.5],[1,1],[0.5,1],[0,1],[0,0.5]];html=1;dashed=1;strokeColor=#185FA5;fillColor=#111827;fontColor=#B5D4F4;fontSize=13;fontStyle=1;verticalAlign=top;rounded=1;arcSize=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="352" width="1100" height="330" as="geometry" />
+        </mxCell>
+
+        <!-- /search box -->
+        <mxCell id="search_svc" value="&lt;b&gt;/search&lt;/b&gt;&lt;br/&gt;Semantic search&lt;br/&gt;Guardrail G1&lt;br/&gt;DELETE /session&lt;br/&gt;GDPR erasure&lt;br/&gt;GET /hitl/queue&lt;br/&gt;POST /hitl/approve&lt;br/&gt;POST /hitl/reject" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0C447C;strokeColor=#185FA5;fontColor=#B5D4F4;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="100" y="390" width="160" height="270" as="geometry" />
+        </mxCell>
+
+        <!-- LANGGRAPH CONTAINER -->
+        <mxCell id="lg_container" value="&lt;b&gt;LangGraph — Agentic Control Plane v5&lt;/b&gt;" style="points=[[0,0],[0.5,0],[1,0],[1,0.5],[1,1],[0.5,1],[0,1],[0,0.5]];html=1;dashed=1;strokeColor=#854F0B;fillColor=none;fontColor=#EF9F27;fontSize=12;fontStyle=1;verticalAlign=top;rounded=1;arcSize=2;" vertex="1" parent="1">
+          <mxGeometry x="275" y="372" width="890" height="298" as="geometry" />
+        </mxCell>
+
+        <!-- GOVERNOR -->
+        <mxCell id="governor" value="&lt;b&gt;Governor Agent&lt;/b&gt;&lt;br/&gt;Keyword-first routing&lt;br/&gt;Gemini fallback" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#26215C;strokeColor=#534AB7;fontColor=#CECBF6;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="295" y="420" width="150" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- SEARCH EXECUTOR -->
+        <mxCell id="search_exec" value="&lt;b&gt;Search Executor&lt;/b&gt;&lt;br/&gt;Vertex AI Search&lt;br/&gt;Guardrail G1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0C447C;strokeColor=#185FA5;fontColor=#B5D4F4;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="490" y="390" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- TRANSACTION EXECUTOR -->
+        <mxCell id="trans_exec" value="&lt;b&gt;Transaction Executor&lt;/b&gt;&lt;br/&gt;Cart ops · Risk score&lt;br/&gt;HITL flag" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#412402;strokeColor=#854F0B;fontColor=#FAC775;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="490" y="460" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- RAG AGENT -->
+        <mxCell id="rag_agent" value="&lt;b&gt;RAG Agent&lt;/b&gt;&lt;br/&gt;BigQuery policy chunks&lt;br/&gt;Keyword retrieval" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#04342C;strokeColor=#0F6E56;fontColor=#9FE1CB;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="490" y="530" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- CHAT NODE -->
+        <mxCell id="chat_node" value="&lt;b&gt;Chat Node&lt;/b&gt;&lt;br/&gt;Casual chat&lt;br/&gt;Gemini direct" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#04342C;strokeColor=#0F6E56;fontColor=#9FE1CB;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="490" y="600" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- GENERATOR -->
+        <mxCell id="generator" value="&lt;b&gt;Generator Agent&lt;/b&gt;&lt;br/&gt;Gemini 2.5 Flash&lt;br/&gt;BigQuery grounding&lt;br/&gt;Cloud DLP scan" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#26215C;strokeColor=#534AB7;fontColor=#CECBF6;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="690" y="420" width="150" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- POLICY WATCHER -->
+        <mxCell id="policy_watcher" value="&lt;b&gt;Policy / Watcher&lt;/b&gt;&lt;br/&gt;Banned topic check&lt;br/&gt;Sensitive data check&lt;br/&gt;HITL queue (risk≥0.8)&lt;br/&gt;Firestore hitl_queue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A32D2D;strokeColor=#EF4444;fontColor=#FEE2E2;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="890" y="420" width="160" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- ARROWS: Governor → Executors -->
+        <mxCell id="g_se" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#534AB7;exitX=1;exitY=0.25;entryX=0;entryY=0.5;" edge="1" source="governor" target="search_exec" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="g_te" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#534AB7;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" source="governor" target="trans_exec" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="g_ra" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#534AB7;exitX=1;exitY=0.75;entryX=0;entryY=0.5;" edge="1" source="governor" target="rag_agent" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="g_ch" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#534AB7;exitX=1;exitY=1;entryX=0;entryY=0.5;" edge="1" source="governor" target="chat_node" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- ARROWS: Executors → Generator -->
+        <mxCell id="se_g" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#185FA5;" edge="1" source="search_exec" target="generator" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="te_g" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#854F0B;" edge="1" source="trans_exec" target="generator" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ra_g" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0F6E56;" edge="1" source="rag_agent" target="policy_watcher" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ch_g" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0F6E56;" edge="1" source="chat_node" target="policy_watcher" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- ARROWS: Generator → Policy Watcher -->
+        <mxCell id="gen_pw" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#534AB7;" edge="1" source="generator" target="policy_watcher" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="te_pw" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#854F0B;" edge="1" source="trans_exec" target="policy_watcher" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- ARROW: /search → Vertex AI -->
+        <mxCell id="sv_va" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#185FA5;" edge="1" source="search_svc" target="vertex_search" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- ARROW: Generator → Gemini -->
+        <mxCell id="gen_gem" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#534AB7;" edge="1" source="generator" target="gemini" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- LAYER 5: AI SERVICES -->
+        <mxCell id="vertex_search" value="&lt;b&gt;Vertex AI Search for Commerce&lt;/b&gt;&lt;br/&gt;Semantic · Personalised · Ranked&lt;br/&gt;500 products indexed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0C447C;strokeColor=#185FA5;fontColor=#B5D4F4;fontSize=12;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="80" y="724" width="290" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="gemini" value="&lt;b&gt;Gemini 2.5 Flash&lt;/b&gt;&lt;br/&gt;Text generation · Embed API&lt;br/&gt;Grounded on BigQuery" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#26215C;strokeColor=#534AB7;fontColor=#CECBF6;fontSize=12;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="390" y="724" width="290" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="model_armor" value="&lt;b&gt;Model Armor&lt;/b&gt;&lt;br/&gt;Content safety&lt;br/&gt;Output guardrails" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#412402;strokeColor=#854F0B;fontColor=#FAC775;fontSize=12;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="700" y="724" width="480" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="gem_ma" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#854F0B;" edge="1" source="gemini" target="model_armor" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- LAYER 6: DATA LAYER -->
+        <mxCell id="data_layer" value="&lt;b&gt;Data Layer + State Layer&lt;/b&gt;" style="points=[[0,0],[0.5,0],[1,0],[1,0.5],[1,1],[0.5,1],[0,1],[0,0.5]];html=1;dashed=1;strokeColor=#0F6E56;fillColor=#0A1A14;fontColor=#9FE1CB;fontSize=13;fontStyle=1;verticalAlign=top;rounded=1;arcSize=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="840" width="1100" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="bigquery" value="&lt;b&gt;BigQuery&lt;/b&gt;&lt;br/&gt;catalog_dim · search_logs&lt;br/&gt;cart_events · policy_chunks&lt;br/&gt;notifications" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#04342C;strokeColor=#0F6E56;fontColor=#9FE1CB;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="100" y="866" width="240" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="firestore" value="&lt;b&gt;Cloud Firestore&lt;/b&gt;&lt;br/&gt;Sessions · Cart state&lt;br/&gt;hitl_queue&lt;br/&gt;30-min GDPR TTL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#04342C;strokeColor=#0F6E56;fontColor=#9FE1CB;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="360" y="866" width="240" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="cart_events" value="&lt;b&gt;cart_events&lt;/b&gt;&lt;br/&gt;Risk score · HITL flag&lt;br/&gt;Transaction log" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#412402;strokeColor=#854F0B;fontColor=#FAC775;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="620" y="866" width="220" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="policy_chunks" value="&lt;b&gt;policy_chunks&lt;/b&gt;&lt;br/&gt;RAG document store&lt;br/&gt;6 policy topics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#04342C;strokeColor=#0F6E56;fontColor=#9FE1CB;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="860" y="866" width="220" height="88" as="geometry" />
+        </mxCell>
+
+        <!-- Grounding arrows -->
+        <mxCell id="vs_bq" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0F6E56;" edge="1" source="vertex_search" target="bigquery" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="gem_bq" value="grounding" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0F6E56;dashed=1;fontColor=#0F6E56;fontSize=10;" edge="1" source="gemini" target="bigquery" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ra_pc" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0F6E56;dashed=1;" edge="1" source="rag_agent" target="policy_chunks" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="pw_fs" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#EF4444;dashed=1;" edge="1" source="policy_watcher" target="firestore" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- DATA SOURCES -->
+        <mxCell id="pos" value="&lt;b&gt;POS / E-com&lt;/b&gt;&lt;br/&gt;Pub/Sub stream" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1A2535;strokeColor=#374151;fontColor=#E5E7EB;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1026" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="crm" value="&lt;b&gt;CRM / Inventory&lt;/b&gt;&lt;br/&gt;Datastream CDC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1A2535;strokeColor=#374151;fontColor=#E5E7EB;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1026" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="clickstream" value="&lt;b&gt;Clickstream&lt;/b&gt;&lt;br/&gt;GA4 · App events" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1A2535;strokeColor=#374151;fontColor=#E5E7EB;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="660" y="1026" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp_notif" value="&lt;b&gt;MCP Notifier (SendGrid)
+Order confirm · Cart abandon
+HITL alert · GDPR consent
+Real email delivery" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#412402;strokeColor=#854F0B;fontColor=#FAC775;fontSize=11;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="940" y="1026" width="220" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- Upward arrows from data sources -->
+        <mxCell id="p_bq" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#374151;exitX=0.5;exitY=0;entryX=0.25;entryY=1;" edge="1" source="pos" target="bigquery" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c_bq" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#374151;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" source="crm" target="bigquery" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="cl_fs" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#374151;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" source="clickstream" target="firestore" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="mcp_bq" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#854F0B;dashed=1;exitX=0.5;exitY=0;entryX=0.75;entryY=1;" edge="1" source="mcp_notif" target="bigquery" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- COMPLIANCE BAR -->
+        <mxCell id="compliance" value="&lt;b&gt;Compliance &amp; Governance&lt;/b&gt; — Cloud DLP · GDPR right to erasure · Model Armor · Policy/Watcher · PII tokenisation · 90-day log retention · HITL workflow · Audit logging" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#412402;strokeColor=#854F0B;fontColor=#EF9F27;fontSize=12;arcSize=3;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1098" width="1100" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- VERSION LEGEND -->
+        <mxCell id="legend" value="&lt;b&gt;Version History&lt;/b&gt;&lt;br/&gt;v1 — Basic /search + /chat&lt;br/&gt;v2 — Hallucination fix + GDPR delete&lt;br/&gt;v3 — LangGraph Sprint 1 (Governor + Search + Chat)&lt;br/&gt;v4 — LangGraph Sprint 2 (Cart + Risk scoring)&lt;br/&gt;&lt;b&gt;v5 — Sprint 3+4+5 FINAL (RAG + HITL + MCP Email)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1A2535;strokeColor=#C9993F;fontColor=#E5E7EB;fontSize=11;arcSize=5;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="352" width="400" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- SPRINT STATUS -->
+        <mxCell id="sprint" value="&lt;b&gt;Sprint Status — ALL COMPLETE&lt;/b&gt;&lt;br/&gt;✅ Sprint 0 — Foundation gaps&lt;br/&gt;✅ Sprint 1 — LangGraph intent routing&lt;br/&gt;✅ Sprint 2 — Cart + Risk scoring&lt;br/&gt;✅ Sprint 3+4 — RAG + HITL + Policy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#04342C;strokeColor=#0F6E56;fontColor=#9FE1CB;fontSize=11;arcSize=5;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="502" width="400" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- AGENT FLOW -->
+        <mxCell id="flow" value="&lt;b&gt;Agent Flow v5&lt;/b&gt;&lt;br/&gt;Governor → Search Executor → Generator → Policy/Watcher&lt;br/&gt;Governor → Transaction Executor → Policy/Watcher&lt;br/&gt;Governor → RAG Agent → Policy/Watcher&lt;br/&gt;Governor → Chat Node → Policy/Watcher&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Policy/Watcher checks:&lt;/b&gt;&lt;br/&gt;· Banned topics (amazon, fake, illegal...)&lt;br/&gt;· Sensitive data in response&lt;br/&gt;· Risk score ≥ 0.8 → HITL queue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1A2535;strokeColor=#C9993F;fontColor=#E5E7EB;fontSize=11;arcSize=5;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="642" width="400" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- API ENDPOINTS -->
+        <mxCell id="endpoints" value="&lt;b&gt;Live API Endpoints (v5)&lt;/b&gt;&lt;br/&gt;GET  /health&lt;br/&gt;POST /search&lt;br/&gt;POST /chat&lt;br/&gt;DELETE /session/{id}&lt;br/&gt;GET  /hitl/queue&lt;br/&gt;POST /hitl/approve/{id}&lt;br/&gt;POST /hitl/reject/{id}&lt;br/&gt;&lt;br/&gt;URL: retail-ai-api-240442120401&lt;br/&gt;.asia-south1.run.app" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#04342C;strokeColor=#0F6E56;fontColor=#9FE1CB;fontSize=11;arcSize=5;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="862" width="400" height="200" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
