@@ -242,5 +242,5 @@ No login required. Search products, add to cart, test HITL trigger, check return
 **Nadeem Ahmad**  
 Principal Enterprise AI Architect  
 📧 nadeem.ahmad.arch@gmail.com  
-🔗 [LinkedIn](https://linkedin.com/in/nadeemahmad)  
+🔗 [LinkedIn](https://www.linkedin.com/in/nadeem-ahmad-0ba5b328/)  
 📅 Sessions: [topmate.io/nadeem_ahmad17](https://topmate.io/nadeem_ahmad17)
